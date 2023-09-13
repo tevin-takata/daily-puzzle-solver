@@ -13,9 +13,9 @@ function NineLetterBoard(props) {
     if (props.clicks !== 0) {
       if (props.letter === 'DEL') {
         if (curr > 0) {
-          setCurr(curr - 1);
           setBoard((prevBoard) => {
-            prevBoard[curr] = '';
+            setCurr(curr - 1);
+            prevBoard[curr - 1] = '';
             return prevBoard;
           });
         }
@@ -29,13 +29,12 @@ function NineLetterBoard(props) {
         if (curr < 9) {
           setBoard((prevBoard) => {
             prevBoard[curr] = props.letter;
+            setCurr(curr + 1);
             return prevBoard;
           });
-          setCurr(curr + 1);
         }
       }
     }
-    console.log(curr, board);
   }, [props.clicks]);
 
   function solve() {

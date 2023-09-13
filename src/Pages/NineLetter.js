@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
-import './App.css';
-import NineLetterBoard from './Components/NineLetterBoard';
+import '../App.css';
+import NineLetterBoard from '../Components/NineLetterBoard';
 
 function isLetter(key) {
   return key.length === 1 && key.match(/[a-z]/i);

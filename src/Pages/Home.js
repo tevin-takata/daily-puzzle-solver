@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './Components/NavBar';
-import Footer from './Components/Footer';
+import logo from '../logo.svg';
+import '../App.css';
+import NavBar from '../Components/NavBar';
+import Footer from '../Components/Footer';
 import { Link } from 'react-router-dom';
 
 function Home() {

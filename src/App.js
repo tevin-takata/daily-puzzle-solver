@@ -2,10 +2,10 @@ import './App.css';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
 import { Link, Route, Routes } from 'react-router-dom';
-import Home from './Home';
-import Honeycomb from './Honeycomb';
-import NineLetter from './NineLetter';
-import LetterBox from './LetterBox';
+import Home from './Pages/Home';
+import Honeycomb from './Pages/Honeycomb';
+import NineLetter from './Pages/NineLetter';
+import LetterBox from './Pages/LetterBox';
 import React from 'react';
 
 const App = () => {

@@ -1,7 +1,7 @@
 import '../App.css';
 import { Container, Nav, Navbar, NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Honeycomb from '../Honeycomb';
+import Honeycomb from '../Pages/Honeycomb';
 
 const NavBar = () => {
   return (

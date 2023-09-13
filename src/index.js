@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './Home';
-import Honeycomb from './Honeycomb';
-import NineLetter from './NineLetter';
-import LetterBox from './LetterBox';
+import Home from './Pages/Home';
+import Honeycomb from './Pages/Honeycomb';
+import NineLetter from './Pages/NineLetter';
+import LetterBox from './Pages/LetterBox';
 import reportWebVitals from './reportWebVitals';
 
 const Routing = () => {
