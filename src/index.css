@@ -54,7 +54,15 @@ code {
 .footer {
   font-family: 'Droid Serif', serif;
   font-size: 14px;
+  margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.word-subhead {
+  font-family: 'Droid Serif', Serif;
+  text-transform: uppercase;
+  padding: 12px 0 12px 0;
+  text-decoration: none;
 }
 
 /* NineLetter */

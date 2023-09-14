@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import { Container } from 'react-bootstrap';
 
 let defaultBoard = [9];
 for (let i = 0; i < 9; i++) {
@@ -38,20 +39,22 @@ function NineLetterBoard(props) {
   }, [props.clicks]);
 
   function solve() {
-
+    
   }
 
   return (
-    <div className="game-board">
-      <div className="box">{board[0]}</div>
-      <div className="box">{board[1]}</div>
-      <div className="box">{board[2]}</div>
-      <div className="box">{board[3]}</div>
-      <div className="center-box">{board[4]}</div>
-      <div className="box">{board[5]}</div>
-      <div className="box">{board[6]}</div>
-      <div className="box">{board[7]}</div>
-      <div className="box">{board[8]}</div>
+    <div>
+      <div className="game-board">
+        <div className="box">{board[0]}</div>
+        <div className="box">{board[1]}</div>
+        <div className="box">{board[2]}</div>
+        <div className="box">{board[3]}</div>
+        <div className="center-box">{board[4]}</div>
+        <div className="box">{board[5]}</div>
+        <div className="box">{board[6]}</div>
+        <div className="box">{board[7]}</div>
+        <div className="box">{board[8]}</div>
+      </div>
     </div>
   );
 }
