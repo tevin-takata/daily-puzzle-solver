@@ -1,14 +1,23 @@
 import {useState, useEffect} from 'react';
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
+import words from '../words';
 
 let defaultBoard = [9];
 for (let i = 0; i < 9; i++) {
   defaultBoard[i] = '';
 }
 
+let solvedWords = [7];
+for (let i = 0; i < 7; i++) {
+  solvedWords[i] = [];
+}
+
 function NineLetterBoard(props) {
   const [board, setBoard] = useState(defaultBoard);
   const [curr, setCurr] = useState(0);
+  const [found, setFound] = useState(solvedWords);
+  const [click, setClick] = useState(false);
+  const [solved, setSolved] = useState(false);
 
   useEffect(() => {
     if (props.clicks !== 0) {
@@ -38,8 +47,29 @@ function NineLetterBoard(props) {
     }
   }, [props.clicks]);
 
+  useEffect(() => {
+    if (curr === 9 && click === true) {
+      solve();
+    }
+    setClick(false);
+  });
+
   function solve() {
-    
+    let visited = [9];
+    for (let i = 0; i < 9; ++i) {
+      visited[i] = false;
+    }
+    solveHelper('', visited);
+    setSolved(true);
+  }
+
+  function solveHelper(word, visited) {
+    if (words.includes(word.toLowerCase())) {
+      setFound((foundWords) => {
+        foundWords[word.length - 3].push(word);
+        return foundWords;
+      });
+    }
   }
 
   return (
@@ -55,6 +85,14 @@ function NineLetterBoard(props) {
         <div className="box">{board[7]}</div>
         <div className="box">{board[8]}</div>
       </div>
+      <Button className="button" onClick={() => setClick(true)}>
+        SOLVE
+      </Button>
+      <div>{solved === true &&
+        <div>
+          {board}
+        </div>
+      }</div>
     </div>
   );
 }

@@ -65,6 +65,15 @@ code {
   text-decoration: none;
 }
 
+.button {
+  font-family: 'Droid Serif', Serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding: 8px 12px 8px 12px;
+  text-decoration: none;
+  align-items: center;
+}
+
 /* NineLetter */
 
 .game-board {
