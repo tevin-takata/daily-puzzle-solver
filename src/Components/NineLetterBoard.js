@@ -61,15 +61,24 @@ function NineLetterBoard(props) {
     }
     solveHelper('', visited);
     setSolved(true);
+    console.log(found);
   }
 
   function solveHelper(word, visited) {
+    console.log(word, visited);
     if (words.includes(word.toLowerCase())) {
       setFound((foundWords) => {
         foundWords[word.length - 3].push(word);
         return foundWords;
       });
     }
+
+    visited.forEach(function(visit) {
+      if (visited[visit] === false) {
+        visited[visit] = true;
+        solveHelper(word.concat(board[visit]), visited);
+      }
+    });
   }
 
   return (
@@ -88,6 +97,9 @@ function NineLetterBoard(props) {
       <Button className="button" onClick={() => setClick(true)}>
         SOLVE
       </Button>
+      <div>
+        FUNCTION IS CURRENTLY WIP
+      </div>
       <div>{solved === true &&
         <div>
           {board}

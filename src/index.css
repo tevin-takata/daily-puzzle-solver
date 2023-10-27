@@ -112,3 +112,12 @@ code {
   font-family: 'Playfair Display', serif;
   font-size: 60px;
 }
+
+/* Honeycomb */
+
+.hexagon {
+  width: 57px;
+  height: 100px;
+  background-color: #3d3d3d;
+  transform: rotate(90deg);
+}
