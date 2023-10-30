@@ -116,8 +116,18 @@ code {
 /* Honeycomb */
 
 .hexagon {
-  width: 57px;
-  height: 100px;
-  background-color: #3d3d3d;
-  transform: rotate(90deg);
+  content: "";
+  display: block;
+  /* I made it red just to show you where the triangle is */
+  border-right: solid red 28px;
+  border-top: solid transparent 50px;
+  border-bottom: solid transparent 50px;
+  /* position it at the bottom */
+  position: absolute;
+  left: 56.9px;
+  /* flipping the triangle */
+  transform: scaleX(-1);
+
+  /* or rotate it 180deg
+  transform: rotate(180deg); */
 }
