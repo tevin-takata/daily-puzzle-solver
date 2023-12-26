@@ -116,8 +116,48 @@ code {
 /* Honeycomb */
 
 .honeycomb {
-  width: 57px;
+  position: relative;
+  margin: 1px 15.0111069989px;
+  width: 57.735026919px;
   height: 100px;
-  background-color: #3d3d3d;
-  transform: rotate(90deg);
+  background-color: silver;
+  display: inline-block;
+}
+
+.honeycomb,
+.honeycomb:before,
+.honeycomb:after {
+  height: 100px;
+  width: 57.735026919px;
+}
+
+.honeycomb:before {
+  position: absolute;
+  content:"";
+  background-color: inherit;
+  transform: rotate(60deg);
+  overflow: hidden;
+}
+
+.honeycomb:after {
+  position: absolute;
+  content:"";
+  background-color: inherit;
+  transform: rotate(-60deg);
+}
+
+.honeycomb:nth-child(odd) {
+  top: 88px;
+}
+
+.honeycomb-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80.8290376866px;
+  font-family: 'Playfair Display', serif
+  font-size: 60px;
+  text-align: center;
+  z-index: 100;
 }
