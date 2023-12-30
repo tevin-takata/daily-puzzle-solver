@@ -56,9 +56,21 @@ function HoneycombBoard(props) {
   **/
 
   return (
-    <div>
-      <div className="game-board">
-        <div className="hexagon"></div>
+    <div className="layout">
+      <div>
+        <div className="honeycomb">
+          <div className="honeycontent">Z</div>
+        </div>
+        <div className="honeycomb"></div>
+      </div>
+      <div>
+        <div className="honeycomb"></div>
+        <div className="center-honeycomb"></div>
+        <div className="honeycomb"></div>
+      </div>
+      <div>
+        <div className="honeycomb"></div>
+        <div className="honeycomb"></div>
       </div>
     </div>
   );
