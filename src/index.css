@@ -2,6 +2,7 @@ header {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
   font-size: 80px;
+  color: black;
   text-transform: uppercase;
   display: inline-block;
   line-height: 72px;
@@ -11,6 +12,7 @@ header {
 
 .nav{
   text-transform: uppercase;
+  color: black;
   border-bottom: 2px solid #2f2f2f;
   border-top: 2px solid #2f2f2f;
   padding: 12px 0 12px 0;
@@ -35,6 +37,7 @@ header {
 
 #subhead-links {
   text-decoration: none;
+  color: black;
   padding-left: 30px;
   padding-right: 30px;
 }
