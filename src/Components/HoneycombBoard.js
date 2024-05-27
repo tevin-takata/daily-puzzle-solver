@@ -8,7 +8,7 @@ for (let i = 0; i < 9; i++) {
 }
 
 
-function HoneycombBoard(props) {
+const HoneycombBoard = (props) => {
   /**const [board, setBoard] = useState(defaultBoard);
   const [curr, setCurr] = useState(0);
   const [found, setFound] = useState(solvedWords);

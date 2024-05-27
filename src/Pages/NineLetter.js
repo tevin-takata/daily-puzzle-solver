@@ -10,7 +10,7 @@ function solve() {
 
 };
 
-function NineLetter() {
+const NineLetter = () => {
   const [letters, setLetters] = useState({});
   const [letter, setLetter] = useState();
   const [clicked, setClicked] = useState(0);

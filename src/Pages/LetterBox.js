@@ -1,7 +1,7 @@
 import logo from '../logo.svg';
 import '../App.css';
 
-function LetterBox() {
+const LetterBox = () => {
   return (
     <div className="App">
       Hello

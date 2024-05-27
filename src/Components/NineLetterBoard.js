@@ -12,7 +12,7 @@ for (let i = 0; i < 7; i++) {
   solvedWords[i] = [];
 }
 
-function NineLetterBoard(props) {
+const NineLetterBoard = (props) => {
   const [board, setBoard] = useState(defaultBoard);
   const [curr, setCurr] = useState(0);
   const [found, setFound] = useState(solvedWords);

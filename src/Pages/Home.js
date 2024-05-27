@@ -4,7 +4,7 @@ import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 import { Link } from 'react-router-dom';
 
-function Home() {
+const Home = () => {
   return (
     <div className="App">
       <header className="App-header">
