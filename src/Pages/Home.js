@@ -21,7 +21,6 @@ function Home() {
           Learn React
         </a>
       </header>
-      <Footer />
     </div>
   );
 }
