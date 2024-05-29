@@ -1,4 +1,4 @@
-import './App.css';
+import './index';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
 import { Link, Route, Routes } from 'react-router-dom';
@@ -10,7 +10,7 @@ import React from 'react';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className='home'>
       <NavBar/>
       <Routes>
         <Route exact path="/" element={<Home/>} />

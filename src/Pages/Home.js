@@ -1,27 +1,22 @@
-import logo from '../logo.svg';
-import '../App.css';
-import NavBar from '../Components/NavBar';
-import Footer from '../Components/Footer';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import '../index.css';
+import { Container, Row, Col } from 'react-bootstrap';
+import logo from '../logo.png';
 
 const Home = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="home">
+      <Row>
+        <Col md={5} className="justify-content-center">
+          <img src={logo} alt="The Daily Puzzle Logo" style={{ width: '200px', height: '200px' }} />
+        </Col>
+        <Col md={7} className="justify-content-end">
+          <p>
+            This is an unofficial solver of puzzles from the mobile app <a href="https://play.google.com/store/apps/details?id=com.typosaurus.thedailypuzzle&hl=en_US&gl=US">The Daily Puzzle</a> developed by <a href="https://typosaurusgames.com/">Typosaurus</a>.
+          </p>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
