@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react';
 import { Button, Container } from 'react-bootstrap';
 import words from '../words';
 
+// Sets empty board
+
 let defaultBoard = [9];
 for (let i = 0; i < 9; i++) {
   defaultBoard[i] = '';

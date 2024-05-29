@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import '../App.css';
+import '../index.css';
 import NineLetterBoard from '../Components/NineLetterBoard';
 
 function isLetter(key) {
@@ -37,7 +37,7 @@ const NineLetter = () => {
   });
 
   return (
-    <div className="App">
+    <div className="home">
       <NineLetterBoard
         letter = {letter}
         clicks = {clicked}

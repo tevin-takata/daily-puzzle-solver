@@ -2,14 +2,18 @@ import {useState, useEffect} from 'react';
 import { Button, Container } from 'react-bootstrap';
 import words from '../words';
 
-let defaultBoard = [9];
-for (let i = 0; i < 9; i++) {
+let defaultBoard = [7];
+for (let i = 0; i < 7; i++) {
   defaultBoard[i] = '';
 }
 
+let solvedWords = [5];
+for (let i = 0; i < 5; i++) {
+  solvedWords[i] = [];
+}
 
 const HoneycombBoard = (props) => {
-  /**const [board, setBoard] = useState(defaultBoard);
+  const [board, setBoard] = useState(defaultBoard);
   const [curr, setCurr] = useState(0);
   const [found, setFound] = useState(solvedWords);
   const [click, setClick] = useState(false);
@@ -27,12 +31,12 @@ const HoneycombBoard = (props) => {
         }
       }
       else if (props.letter === 'ENTER') {
-        if (curr === 9) {
+        if (curr === 7) {
           solve();
         }
       }
       else {
-        if (curr < 9) {
+        if (curr < 7) {
           setBoard((prevBoard) => {
             prevBoard[curr] = props.letter;
             setCurr(curr + 1);
@@ -44,7 +48,7 @@ const HoneycombBoard = (props) => {
   }, [props.clicks]);
 
   useEffect(() => {
-    if (curr === 9 && click === true) {
+    if (curr === 7 && click === true) {
       solve();
     }
     setClick(false);
@@ -53,24 +57,35 @@ const HoneycombBoard = (props) => {
   function solve() {
 
   }
-  **/
 
   return (
     <div className="layout">
       <div>
         <div className="honeycomb">
-          <div className="honeycontent">Z</div>
+          <div className="honeycontent">{board[0]}</div>
         </div>
-        <div className="honeycomb"></div>
+        <div className="honeycomb">
+          <div className="honeycontent">{board[1]}</div>
+        </div>
       </div>
       <div>
-        <div className="honeycomb"></div>
-        <div className="center-honeycomb"></div>
-        <div className="honeycomb"></div>
+        <div className="honeycomb">
+          <div className="honeycontent">{board[2]}</div>
+        </div>
+        <div className="center-honeycomb">
+          <div className="honeycontent">{board[3]}</div>
+        </div>
+        <div className="honeycomb">
+          <div className="honeycontent">{board[4]}</div>
+        </div>
       </div>
       <div>
-        <div className="honeycomb"></div>
-        <div className="honeycomb"></div>
+        <div className="honeycomb">
+          <div className="honeycontent">{board[5]}</div>
+        </div>
+        <div className="honeycomb">
+          <div className="honeycontent">{board[6]}</div>
+        </div>
       </div>
     </div>
   );
