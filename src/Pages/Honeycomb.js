@@ -1,4 +1,4 @@
-import logo from '../logo.svg';
+
 import {useState, useEffect} from 'react';
 import '../index.css';
 import HoneycombBoard from '../Components/HoneycombBoard';
@@ -8,7 +8,6 @@ function isLetter(key) {
 };
 
 const Honeycomb = () => {
-  const [letters, setLetters] = useState({});
   const [letter, setLetter] = useState();
   const [clicked, setClicked] = useState(0);
   const onKeyDown = (e) => {
