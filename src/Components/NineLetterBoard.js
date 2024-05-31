@@ -2,22 +2,10 @@ import {useState, useEffect} from 'react';
 import { Button, Container } from 'react-bootstrap';
 import words from '../words';
 
-// Sets empty board
-
-let defaultBoard = [9];
-for (let i = 0; i < 9; i++) {
-  defaultBoard[i] = '';
-}
-
-let solvedWords = [7];
-for (let i = 0; i < 7; i++) {
-  solvedWords[i] = [];
-}
-
 const NineLetterBoard = (props) => {
-  const [board, setBoard] = useState(defaultBoard);
+  const [board, setBoard] = useState(new Array(7).fill(''));
   const [curr, setCurr] = useState(0);
-  const [found, setFound] = useState(solvedWords);
+  const [found, setFound] = useState(Array.from({ length: 5 }, () => []));
   const [click, setClick] = useState(false);
   const [solved, setSolved] = useState(false);
 
@@ -49,21 +37,22 @@ const NineLetterBoard = (props) => {
     }
   }, [props.clicks]);
 
+  const resetFound = () => {
+    setFound(Array.from({ length: 5 }, () => []));
+  };
+
   useEffect(() => {
     if (curr === 9 && click === true) {
+      resetFound();
       solve();
     }
     setClick(false);
-  });
+  }, [curr, click]);
 
   function solve() {
-    let visited = [9];
-    for (let i = 0; i < 9; ++i) {
-      visited[i] = false;
-    }
+    let visited = new Array(7).fill(false);
     solveHelper('', visited);
     setSolved(true);
-    console.log(found);
   }
 
   function solveHelper(word, visited) {

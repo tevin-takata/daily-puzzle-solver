@@ -6,10 +6,6 @@ function isLetter(key) {
   return key.length === 1 && key.match(/[a-z]/i);
 };
 
-function solve() {
-
-};
-
 const NineLetter = () => {
   const [letters, setLetters] = useState({});
   const [letter, setLetter] = useState();
