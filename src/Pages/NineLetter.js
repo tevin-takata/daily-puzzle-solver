@@ -7,7 +7,6 @@ function isLetter(key) {
 };
 
 const NineLetter = () => {
-  const [letters, setLetters] = useState({});
   const [letter, setLetter] = useState();
   const [clicked, setClicked] = useState(0);
   const onKeyDown = (e) => {
