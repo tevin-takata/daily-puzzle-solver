@@ -3,7 +3,7 @@ import { Button, Container } from 'react-bootstrap';
 import words from '../words';
 
 const NineLetterBoard = (props) => {
-  const [board, setBoard] = useState(new Array(7).fill(''));
+  const [board, setBoard] = useState(new Array(9).fill(''));
   const [curr, setCurr] = useState(0);
   const [found, setFound] = useState(Array.from({ length: 7 }, () => []));
   const [click, setClick] = useState(false);
