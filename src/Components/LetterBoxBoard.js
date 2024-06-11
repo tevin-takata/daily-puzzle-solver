@@ -3,9 +3,9 @@ import { Button, Container } from 'react-bootstrap';
 import words from '../words';
 
 const LetterBoxBoard = (props) => {
-  const [board, setBoard] = useState(new Array(7).fill(''));
+  const [board, setBoard] = useState(new Array(12).fill(''));
   const [curr, setCurr] = useState(0);
-  const [found, setFound] = useState(Array.from({ length: 7 }, () => []));
+  const [found, setFound] = useState([]);
   const [click, setClick] = useState(false);
   const [solved, setSolved] = useState(false);
 
@@ -21,12 +21,12 @@ const LetterBoxBoard = (props) => {
         }
       }
       else if (props.letter === 'ENTER') {
-        if (curr === 9) {
+        if (curr === 12) {
           solve();
         }
       }
       else {
-        if (curr < 9) {
+        if (curr < 12) {
           setBoard((prevBoard) => {
             prevBoard[curr] = props.letter;
             setCurr(curr + 1);
@@ -38,34 +38,20 @@ const LetterBoxBoard = (props) => {
   }, [props.clicks]);
 
   const resetFound = () => {
-    setFound(Array.from({ length: 7 }, () => []));
+    setFound([]);
   };
 
   useEffect(() => {
-    if (curr === 9 && click === true) {
+    if (curr === 12 && click === true) {
       resetFound();
       solve();
     }
     setClick(false);
   }, [curr, click]);
 
-  const moves = [[-1, -1], [0, -1], [1, -1], [-1, 0], [1, 0], [1, -1], [0, 1], [1, 1]];
-
-  function to2d(index) {
-    return [index % 3, Math.floor(index / 3)];
-  }
-
-  function toIndex(x, y) {
-    return (y * 3) + x;
-  }
-
-  function validIndex(x, y) {
-    return (x >= 0 && x < 3 && y >= 0 && y < 3);
-  }
-
   function solve() {
-    for (let i = 0; i < 9; ++i) {
-      let visited = new Array(9).fill(false);
+    for (let i = 0; i < 12; ++i) {
+      let visited = [new Array(12).fill(false)];
       solveHelper('', i, visited);
     }
     setSolved(true);
