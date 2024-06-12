@@ -246,7 +246,18 @@ code {
   padding: 50px;
 }
 
-.box {
+.letterbox-center {
+  grid-row: 2 / 5;
+  grid-column: 2 / 5;
+  background: white;
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.letterbox-box {
   background: white;
   border: 3px solid black;
   display: flex;

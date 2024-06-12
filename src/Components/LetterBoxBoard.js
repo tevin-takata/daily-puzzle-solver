@@ -52,12 +52,14 @@ const LetterBoxBoard = (props) => {
   function solve() {
     for (let i = 0; i < 12; ++i) {
       let visited = [new Array(12).fill(false)];
-      solveHelper('', i, visited);
+      solveHelper('', i, [], visited);
     }
     setSolved(true);
   }
 
-  function solveHelper(word, index, visited) {
+  const checked = (arr, fn = Boolean) => arr.every(fn);
+
+  function solveHelper(word, index, arr, visited) {
     if (words.includes(word.toLowerCase()) && visited[4] === true) {
       setFound((foundWords) => {
         if (!foundWords[word.length - 3].includes(word)) {
@@ -102,16 +104,20 @@ const LetterBoxBoard = (props) => {
 
   return (
     <div>
-      <div className="game-board">
-        <div className="box">{board[0]}</div>
-        <div className="box">{board[1]}</div>
-        <div className="box">{board[2]}</div>
-        <div className="box">{board[3]}</div>
-        <div className="center-box">{board[4]}</div>
-        <div className="box">{board[5]}</div>
-        <div className="box">{board[6]}</div>
-        <div className="box">{board[7]}</div>
-        <div className="box">{board[8]}</div>
+      <div className="letterbox-game-board">
+        <div className="letterbox-center"></div>
+        <div className="letterbox-box" style={{ gridRow: '1 / 2', gridColumn: '2 / 3'}}>{board[0]}</div>
+        <div className="letterbox-box" style={{ gridRow: '1 / 2', gridColumn: '3 / 4'}}>{board[1]}</div>
+        <div className="letterbox-box" style={{ gridRow: '1 / 2', gridColumn: '4 / 5'}}>{board[2]}</div>
+        <div className="letterbox-box" style={{ gridRow: '2 / 3', gridColumn: '5 / 6'}}>{board[3]}</div>
+        <div className="letterbox-box" style={{ gridRow: '3 / 4', gridColumn: '5 / 6'}}>{board[4]}</div>
+        <div className="letterbox-box" style={{ gridRow: '4 / 5', gridColumn: '5 / 6'}}>{board[5]}</div>
+        <div className="letterbox-box" style={{ gridRow: '5 / 6', gridColumn: '4 / 5'}}>{board[6]}</div>
+        <div className="letterbox-box" style={{ gridRow: '5 / 6', gridColumn: '3 / 4'}}>{board[7]}</div>
+        <div className="letterbox-box" style={{ gridRow: '5 / 6', gridColumn: '2 / 3'}}>{board[8]}</div>
+        <div className="letterbox-box" style={{ gridRow: '4 / 5', gridColumn: '1 / 2'}}>{board[9]}</div>
+        <div className="letterbox-box" style={{ gridRow: '3 / 4', gridColumn: '1 / 2'}}>{board[10]}</div>
+        <div className="letterbox-box" style={{ gridRow: '2 / 3', gridColumn: '1 / 2'}}>{board[11]}</div>
       </div>
       <Button className="button" onClick={() => setClick(true)}>
         SOLVE
