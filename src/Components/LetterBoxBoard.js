@@ -60,24 +60,27 @@ const LetterBoxBoard = (props) => {
   const checked = (arr, fn = Boolean) => arr.every(fn);
 
   function solveHelper(word, index, arr, visited) {
-    if (words.includes(word.toLowerCase()) && visited[4] === true) {
+    if (words.includes(word.toLowerCase()) && checked(visited)) {
       setFound((foundWords) => {
-        if (!foundWords[word.length - 3].includes(word)) {
+        if (!foundWords.includes(word)) {
           foundWords[word.length - 3].push(word);
         }
         return [...foundWords];
       });
     }
 
-    for (let [dx, dy] of moves) {
-      let [x, y] = to2d(index);
-      let curr = [x + dx, y + dy];
-      let ind = toIndex(curr[0], curr[1]);
-      if (validIndex(curr[0], curr[1]) && !visited[ind]) {
-        visited[ind] = true;
-        let check = word.concat(board[ind]);
-        solveHelper(check, ind, visited);
-        visited[ind] = false;
+    arr1.every(item => arr2.includes(item))
+
+    for (let i = 0; i < 12; ++i) {
+      if (!visited[i] && i/3 != index/3) {
+        visited[i] = true;
+        let check = word.concat(board[i]);
+        solveHelper(check, i, arr, visited);
+        if (words.includes(word)) {
+          arr.push(word);
+          solveHelper('', i, arr, visited);
+        }
+        visited[i] = false;
       }
     }
   }
