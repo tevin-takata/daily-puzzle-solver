@@ -51,34 +51,39 @@ const LetterBoxBoard = (props) => {
 
   function solve() {
     for (let i = 0; i < 12; ++i) {
-      let visited = [new Array(12).fill(false)];
-      solveHelper('', i, [], visited);
+      let visited = new Array(12).fill(false);
+      solveHelper('', i, [], false, visited);
     }
     setSolved(true);
   }
 
   const checked = (arr, fn = Boolean) => arr.every(fn);
 
-  function solveHelper(word, index, arr, visited) {
-    if (words.includes(word.toLowerCase()) && checked(visited)) {
+  function solveHelper(word, index, arr, firstWord, visited) {
+    console.log(word);
+    if (words.includes(word) && checked(visited) && firstWord === true) {
+      arr.push(word);
       setFound((foundWords) => {
-        if (!foundWords.includes(word)) {
-          foundWords[word.length - 3].push(word);
+        if (!foundWords.some(arr1 => arr1.every(item => arr.includes(item)))) {
+          foundWords.push([...arr]);
         }
         return [...foundWords];
       });
+      arr.pop();
+      return;
     }
 
-    arr1.every(item => arr2.includes(item))
-
     for (let i = 0; i < 12; ++i) {
-      if (!visited[i] && i/3 != index/3) {
+      if (!visited[i] && Math.floor(i/3) != Math.floor(index/3)) {
         visited[i] = true;
         let check = word.concat(board[i]);
-        solveHelper(check, i, arr, visited);
-        if (words.includes(word)) {
-          arr.push(word);
-          solveHelper('', i, arr, visited);
+        if (check.length <= 9) {
+          solveHelper(check, i, arr, firstWord, visited);
+          if (words.includes(word) && !firstWord) {
+            arr.push(word);
+            solveHelper(board[i], i, arr, true, visited);
+            arr.pop();
+          }
         }
         visited[i] = false;
       }
@@ -86,17 +91,11 @@ const LetterBoxBoard = (props) => {
   }
 
   function displayColumns(words) {
-    const noWords = Math.ceil(words.length/4)
-    const columns = [];
-    for (let i = 0; i < 4; i++) {
-      columns.push(words.slice(i * noWords, (i + 1) * noWords));
-    }
-
     return (
-      <div style={{ display: 'flex' }}>
-        {columns.map((column, index) => (
-          <div key={index} style={{ flex: 1 }}>
-            {column.map((word, i) => (
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        {words.map((arr, row) => (
+          <div key={row} style={{ display: 'flex', flex: 1 }}>
+            {arr.map((word, i) => (
               <div key={i}>{word}</div>
             ))}
           </div>
@@ -128,20 +127,7 @@ const LetterBoxBoard = (props) => {
       {solved ? (
         // If solved, display all words
         <Container style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto', }}>
-          <div className="solved">3-Letter Words</div>
-          <div>{displayColumns(found[0])}</div>
-          <div className="solved">4-Letter Words</div>
-          <div>{displayColumns(found[1])}</div>
-          <div className="solved">5-Letter Words</div>
-          <div>{displayColumns(found[2])}</div>
-          <div className="solved">6-Letter Words</div>
-          <div>{displayColumns(found[3])}</div>
-          <div className="solved">7-Letter Words</div>
-          <div>{displayColumns(found[4])}</div>
-          <div className="solved">8-Letter Words</div>
-          <div>{displayColumns(found[5])}</div>
-          <div className="solved">9-Letter Words</div>
-          <div>{displayColumns(found[6])}</div>
+          <div>{displayColumns(found)}</div>
         </Container>
       ) : (
         // Otherwise, display instructions

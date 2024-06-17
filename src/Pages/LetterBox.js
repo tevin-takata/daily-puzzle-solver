@@ -32,12 +32,17 @@ const LetterBox = () => {
   });
 
   return (
+    <div>
+      <p>Letter Box Solver is currently WIP</p>
+    </div>
+    /**
     <div className="home">
       <LetterBoxBoard
         letter = {letter}
         clicks = {clicked}
       />
     </div>
+    */
   );
 }
 
