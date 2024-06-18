@@ -2,6 +2,8 @@
 
 The Daily Puzzle is a mobile game created by Typosaurus. This is an unofficial solver of some of the games on this app (WIP) such as Nine Letter, Honeycomb, Letter Box, etc.
 
+tevin-takata.github.io/daily-puzzle-solver/
+
 ## How It Works
 
 A user types letters on a keyboard and inputs letters into the different boards. Clicking "SOLVE" will check all permutations of the given letters to display all solutions. There is no mobile support for this app yet, so inputting letters would be difficult. The functions recursively checks different combinations of letters with the words in `words.js`, marking off all visited letters to ensure no letters are reused.
