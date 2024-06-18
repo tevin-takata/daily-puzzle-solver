@@ -2,7 +2,7 @@
 
 The Daily Puzzle is a mobile game created by Typosaurus. This is an unofficial solver of some of the games on this app (WIP) such as Nine Letter, Honeycomb, Letter Box, etc.
 
-[Daily Puzzle Solver](tevin-takata.github.io/daily-puzzle-solver/)
+[Daily Puzzle Solver](https://tevin-takata.github.io/daily-puzzle-solver/)
 
 ## How It Works
 
