@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/daily-puzzle-solver/static/css/main.addcadda.css",
+    "main.js": "/daily-puzzle-solver/static/js/main.ee8bb1ca.js",
+    "static/js/787.35b37466.chunk.js": "/daily-puzzle-solver/static/js/787.35b37466.chunk.js",
+    "static/media/logo.png": "/daily-puzzle-solver/static/media/logo.5e38d624cd4c4761b3af.png",
+    "index.html": "/daily-puzzle-solver/index.html",
+    "main.addcadda.css.map": "/daily-puzzle-solver/static/css/main.addcadda.css.map",
+    "main.ee8bb1ca.js.map": "/daily-puzzle-solver/static/js/main.ee8bb1ca.js.map",
+    "787.35b37466.chunk.js.map": "/daily-puzzle-solver/static/js/787.35b37466.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.addcadda.css",
+    "static/js/main.ee8bb1ca.js"
+  ]
+}
